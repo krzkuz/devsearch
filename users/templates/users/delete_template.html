@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<main class="formPage my-xl">
+    <div class="content-box">
+        <div class="formWrapper">
+            
+            <br>
+            <p>Are you sure you want to delete "{{skill}}"?</p>
+            <form class="form" method="POST" action="">
+                {% csrf_token %}
+                <a class="btn btn--sub btn--lg  my-md" href="{% url 'account' %}">Go Back</a>
+                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Confirm" />
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
