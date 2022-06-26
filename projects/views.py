@@ -11,7 +11,7 @@ from django.contrib import messages
 # Create your views here.
 def projects(request):
     projects, search_query = search_project(request)
-    custom_range, projects = paginate_project(request, projects, 2)
+    custom_range, projects = paginate_project(request, projects, 6)
 
     context = {
         'projects': projects,
