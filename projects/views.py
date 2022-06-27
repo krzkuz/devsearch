@@ -51,10 +51,11 @@ def createProject(request):
         if form.is_valid():
             project = form.save(commit=False)
             project.owner = profile
+            project.save()
+
             for tag in newtags:
                 tag, created = project.tags.get_or_create(name=tag)
-                # project.tags.add(tag)
-            project.save()
+
             return redirect('projects')
     context = {'form': form}
     return render(request, "projects/project_form.html", context)
