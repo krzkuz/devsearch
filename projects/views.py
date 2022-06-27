@@ -55,6 +55,7 @@ def createProject(request):
 
             for tag in newtags:
                 tag, created = project.tags.get_or_create(name=tag)
+                project.tags.add(tag)
 
             return redirect('projects')
     context = {'form': form}
